@@ -1,119 +1,134 @@
-# BeyondIRR Task
+# BeyondIRR Hiring Assignment - August 2024
 
-Create a Django Application that manages the expenses of a family. Let's consider a family of 6 people, namely, a Father, a Mother, two children (Child1, Child2), set of grandparents (Grandfather and Grandmother). Goal of this tracker is to enable this family for the financial year of 2023-24 to save an `goal-amount` of their choice. This choice will vary for different families. 
+Congratulations on passing Level One! We are excited to present you with the next step in our selection process which would evaluate your Django Development skillset while giving you a glimpse of a FinTech eco-system.
 
-### General Details
+## Assignment Instructions
 
-- Earning members of this family are considered to be the parents and the grandparents at the time of building the application (there may be more in the future).
-- Sources of income for the earning members of the family maybe dynamic, i.e. there can be multiple sources of income to be considered for each individual earning member.
-- Each individual member of the family bound by certain attributes:
-    - Income they generate per month
-    - Amount they will contribute in the `family-fund-expense-pool`
-    - Personal Expense amount threshold 
+1. **Work Authenticity:** Ensure that all code you submit is your original work. Plagiarism or using someone else's code is strictly prohibited and will result in disqualification.
 
-Note: Each individual member is allowed to have a personal expense amount that they can spend without submitting as an expense in our tracker. For example, if the Father has spent Rs. 50 out his Personal Expense amount threshold of Rs. 20,000 then he may or may not add it as an expense in this tracker. The family member will however provide the overall amount spent out of his personal expense at the end of the month.
+2. **Task Completion:** The assignment consists of multiple tasks, ranging from basic to advanced. It is not necessary to complete all tasks; you will be evaluated based on the number of tasks you complete progressively, the quality of your code, and your approach towards problem-solving.
 
-### Task Details
-- Father has:
-    - Income of Rs. 1,20,000 per month
-    - Amount he will contribute to `family-fund-expense-pool` is 70% of his income
-    - Personal Expense amount threshold is Rs. 20,000 per month
-- Mother has:
-    - Income of Rs. 1,50,000 per month
-    - Amount she will contribute to `family-fund-expense-pool` is 70% of her income
-    - Personal Expense amount threshold is Rs. 15,000 per month
-- Granfather has:
-    - Income of Rs. 40,000 per month
-    - Amount he will contribute to `family-fund-expense-pool` is 15% of his income
-    - Personal Expense amount threshold is Rs. 8,000 per month
-- Granmother has:
-    - Income of Rs. 20,000 per month
-    - Amount she will contribute to `family-fund-expense-pool` is 10% of her income
-    - Personal Expense amount threshold is Rs. 5,000 per month
-- Child1 has:
-    - Income of Rs. 0 per month
-    - Amount they will contribute to `family-fund-expense-pool` is 0% of her income
-    - Personal Expense amount threshold is Rs. 2,000 per month
-- Child2 has:
-    - Income of Rs. 0 per month
-    - Amount they will contribute to `family-fund-expense-pool` is 0% of her income
-    - Personal Expense amount threshold is Rs. 2,000 per month
+3. **Best Practices:** Follow standard code formatting guidelines for Python. Use meaningful variable names, write modular code, and ensure proper error handling. Code readability and maintainability are critical, so please comment your code where necessary.
 
-### Explanation
-Since the Father is earning Rs. 1,20,000 per month and he is contributing 70% of his income to the `family-fund-expense-pool` which amounts to be Rs. 84,000 the rest of his income Rs. 36,000 is then considered as `saved-money`. Similarly, the Mother is earning Rs. 1,50,000 per month and her share towards `family-fund-expense-pool` is Rs. 1,05,000 (70% of her income) she will save Rs. 1,50,000 - Rs. 1,05,000 which is Rs. 45,000 is then considered as `saved-money` just like every other family member respectively.
+4. **Project Setup:** Begin by setting up a new **Django** project. Create a virtual environment, install Django, and start a new project. Include this setup process in your README file with relevant `requirements.txt`, so it's clear how to reproduce your environment.
 
-`family-fund-expense-pool` is used to spend on the total common spending of the family expenses (Rent, Electricity, you may add more). Personal Expenses are allocated from the `family-fund-expense-pool` like,
-- Father is allocated Rs. 20,000 from `family-fund-expense-pool`
-- Mother is allocated Rs. 15,000 from `family-fund-expense-pool`
-- Granfather is allocated Rs. 8,000 from `family-fund-expense-pool`
-- Granmother is allocated Rs. 5,000 from `family-fund-expense-pool`
-- Child1 is allocated Rs. 2,000 from `family-fund-expense-pool`
-- Child2 is allocated Rs. 2,000 from `family-fund-expense-pool`
+5. **Version Control:** Use Git to track changes of your code. Please keep in mind that your code submission should demonstrate regular and incremental commits with meaningful messages and strictly avoid to commit your entire codebase in one go. This is crucial for us to evaluate your progress and development approach.
 
-The rest of the money is allocated to various expenditures that the family may incur during a month. The money after the expenditures is called `saved-money`, money leftover from the personal allocated amount is added to the `saved-money` attribute if they do not spend it fully.
-
-## Application Specifications
-
-### Project Details
-- Create a project named `birr`
-- Create three models:
-    - `Accounts`: Store information about the family members.
-    - `Expenses`: Store information about which family member from `Accounts` incurred an expense at which date.
-    - `Billing`: Store extra information about the `Expenses` such as the bill of the expense.
+6. **Deadline**: Please submit your assignment by **11:59 PM on August 18, 2024**. No commits made after this timestamp will be considered for the evaluation.
 
 
-## Design APIs
-### GET Request
-- **/api/accounts/** 
-    - To attain all the objects accounts in the `Accounts` model
-- **/api/accounts/{id}**
-    - To attain single object accounts in the `Accounts` model
-- **/api/expense/** 
-    - To attain all the objects in the `Expense` model
-- **/api/expense/{id}**
-    - To attain single object in the `Expense` model
-- **/api/billing/** 
-    - To attain all the objects in the `Billing` model
-- **/api/billing/{id}**
-    - To attain single object in the `Billing` model
+## Assignment Challenges
 
-### POST Request
-- **/api/accounts/** 
-    - Add an object in the `Accounts` model with `json` payload
-- **/api/expense/** 
-    - Add an object in the `Expense` model with `json` payload
-- **/api/billing/** 
-    - Add an object in the `Billing` model with `json` payload
+### Task 1: Protect API endpoint(s)
 
-### PATCH Request
-- **/api/accounts/** 
-    - Update an object in the `Accounts` model with `json` payload where partial update is allowed
-- **/api/expense/** 
-    - Update an object in the `Expense` model with `json` payload where partial update is allowed
-- **/api/billing/** 
-    - Update an object in the `Billing` model with `json` payload where partial update is allowed
+> **Objective:** Secure the APIs by implementing JWT authentication using RS256 algorithm.
+- Integrate JWT authentication across all API endpoints in this assignment.
+- Implement token generation and validation as per the RS256 algorithm.
+- Implement a Login API that accepts `email` and `password` and returns a JWT token.
 
 
-### DELETE Request
-- **/api/accounts/** 
-    - Delete an object in the `Accounts` model with `json` payload
-- **/api/expense/** 
-    - Delete an object in the `Expense` model with `json` payload
-- **/api/billing/** 
-    - Delete an object in the `Billing` model with `json` payload
+### Task 2: Custom User Model with Unique Fields
+
+> **Objective:** Implement a new **Account** model that adheres to the following specifications:
+- Email should be unique for each user.
+- Add a new field `arn_number` and that should also be unique for any given user.
+- No username field should be present in the table.
+
+_**Note**: An ARN number is a unique numeric code given to individuals or companies who want to sell mutual funds to its customers. Asset Management Companies (AMC) must use this code while dealing with Fund Managers in the selling and marketing of Funds. For e.g. Axis Securities Limited has ARN number as **64610**._
 
 
-### Additional APIs
-- An API that shows the individual family member of how much more can they spend out of their personal allocated amount
-- An API that checks if any family member as exceeded their personal allocated amount this month. 
-- An API that shows how much more amount is needed to reach `goal-amount` in this financial year.
+### Task 3: ARN Validation Service
 
-**NOTE:**
----------------
-- Assign a superuser to any one of the accounts in the project
-- Please document the code wherever possible
-- Please use pep8 guidelines to complete this task
+> **Objective:** Develop a signup API that validates the ARN number during the registration process.
+- The API should accept the given fields: `email`, `password`, `first_name`, `last_name` (optional), and `arn_number`.
+- The Association of Mutual Funds in India (AMFI) provides a service on its website to locate the ARN verified distributor. Therefore, the developer must ensure the validity of the ARN number by fetching the record from the [AMFI website](https://www.amfiindia.com/locate-your-nearest-mutual-fund-distributor-details). 
+- The email extracted from the website should match with the user's email used for signup. 
+- If any error is encountered during the process, the API should return a reasonable error message.
+- The developer may choose to scrape the website or use any other method to fetch the data.
 
-### Authors of this task
-- [@shubdixit](https://github.com/shubdixit)
-- [@sagar-birr](https://github.com/sagar-birr)
+
+### Task 4: Better Error Logs
+
+> **Objective:** Implement a decorator that captures request payloads and responses in the event of an exception/error.
+- Create a decorator `log_request` to record all the exceptions/errors emitted by a django view. Use this decorator to log any errors encountered during the signup process by a user.
+- The decorator should populate the log entries in the model `LogRequest` with appropriate fields such as `url`, `status_code`, `timestamp`, etc. 
+- The decorator should accept an optional parameter `record_success`. When set to `True`, it should capture the success responses as well.
+- **Bonus:** The decorator should support masking of sensitive data points in the payload and response.
+
+
+### Task 5: Bulk Transaction Updates via Excel Upload
+
+> **Objective:** Create an API endpoint that allows users to upload an excel file to update their transaction records.
+- The API should accept an excel file that contains multiple transaction records and add/update the `Transaction` model. 
+- The Transaction schema should be as follows:
+    | Field       | Type        | Description                |
+    |------------ |-------------|----------------------------|
+    | user        | Foreign Key | Reference to Account model |
+    | product     | Char        | Unique product identifier  |
+    | asset_class | Choice      | Equity, Debt, or Alternate |
+    | date        | Date        | Date of transaction        |
+    | units       | Decimal     | Units purchased/sold       |
+    | amount      | Decimal     | Transaction amount         |
+- For each record in the file:
+    - If a transaction for the specified product and date already exists for the user, the API should update that record.
+    - If no matching record exists, a new transaction record should be created.
+- Ensure that each product can only have one transaction per day for a given user.
+- **Bonus:** Optimize the process to handle large excel files efficiently.
+
+_**Note:** Please find the required excel workbook `template.xlsx` within this repository._
+
+
+### Task 6: Yearly Transaction Summary by Asset Class
+
+> **Objective:** Develop an endpoint `/summary` that aggregates transaction data across different asset classes for each financial year.
+- The endpoint should calculate the net transactions for each asset class (Equity, Debt, Alternate) within a financial year (1st April to 31st March) for a given user associated with the corresponding `Transaction` model.
+- If there are no transactions for a particular asset class in a financial year, the sum for that asset class should be 0.
+- The response should be structured as follows:
+    ```
+    {
+        "FY24-25": {
+            "Equity": 1000,
+            "Debt": 2000,
+            "Alternate": 3000
+        },
+        "FY23-24": {
+            "Equity": 1000,
+            "Debt": 2000,
+            "Alternate": 0
+        },
+        ...
+    }
+    ```
+
+
+## Extra Credits
+Regardless of your main challenge completion, feel free to attempt the following tasks for some extra brownie points :D
+
+### Bonus Task: Comprehensive Test Suite
+
+> **Objective:** Develop a test suite to ensure the reliability and correctness of your code.
+- Write tests cases for all critical components, including models, views, serializers, utilities, etc. alongwith integration and end-to-end tests.
+- Aim for high code coverage to ensure that most of your code is tested. Use tools like `pytest-cov` or `coverage.py` to measure and report code coverage.
+
+
+### Bonus Task: Detailed Documentation
+
+> **Objective:** Create thorough documentation that explains how to use and extend your project.
+- Include inline comments or docstrings in your code to explain complex logics.
+- Extend your README file to include:
+    - Detailed instructions for setting up the development environment.
+    - API documentation, including endpoints, request formats, example responses, etc.
+    - Links as citation(s) to any article/code referred to or used in the application.
+
+
+## Submission Guidelines
+- Create a private GitHub repository on your account for this assignment.
+- Add the the following GitHub accounts as collaborators:
+    - [Avi-Sh](https://github.com/Avi-Sh) - avishrant.sharma@beyondirr.tech
+    - [pandeygaurav25](https://github.com/pandeygaurav25) - gaurav.pandey@beyondirr.tech
+- Submit the link to your private GitHub repository via the specified submission form shared on your respective emails.
+- **DEADLINE: 11:59 PM on August 18, 2024, positively.**
+
+_**Note:** Ensure that your repository is accessible to the provided GitHub username and includes all code, tests, requirements, configurations or documentation, if any._
+
+We are eager to review your submission and look forward how you approach these challenges! Good Luck!
