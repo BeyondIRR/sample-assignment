@@ -1,6 +1,4 @@
-# BeyondIRR Hiring Assignment - August 2024
-
-Congratulations on passing Level One! We are excited to present you with the next step in our selection process which would evaluate your Django Development skillset while giving you a glimpse of a FinTech eco-system.
+# BeyondIRR Hiring Assignment
 
 ## Assignment Instructions
 
@@ -14,7 +12,7 @@ Congratulations on passing Level One! We are excited to present you with the nex
 
 5. **Version Control:** Use Git to track changes of your code. Please keep in mind that your code submission should demonstrate regular and incremental commits with meaningful messages and strictly avoid to commit your entire codebase in one go. This is crucial for us to evaluate your progress and development approach.
 
-6. **Deadline**: Please submit your assignment by **11:59 PM on August 18, 2024**. No commits made after this timestamp will be considered for the evaluation.
+6. **Deadline**: Please submit your assignment by **11:59 PM on December 15, 2025**. No commits made after this timestamp will be considered for the evaluation.
 
 
 ## Assignment Challenges
@@ -128,7 +126,7 @@ Regardless of your main challenge completion, feel free to attempt the following
     - [sagar-birr](https://github.com/sagar-birr) - sagar.agarwal@beyondirr.tech
     - [Dhruv-Sachdev1313](https://github.com/Dhruv-Sachdev1313) - dhruv.sachdev@beyondirr.tech
 - Submit the link to your private GitHub repository via the specified submission form shared on your respective emails.
-- **DEADLINE: 11:59 PM on August 18, 2024, positively.**
+- **DEADLINE: 11:59 PM on December 15, 2025, positively.**
 
 _**Note:** Ensure that your repository is accessible to the provided GitHub username and includes all code, tests, requirements, configurations or documentation, if any._
 
