@@ -124,7 +124,6 @@ Regardless of your main challenge completion, feel free to attempt the following
 - Add the the following GitHub accounts as collaborators:
     - [Avi-Sh](https://github.com/Avi-Sh) - avishrant.sharma@beyondirr.tech
     - [sagar-birr](https://github.com/sagar-birr) - sagar.agarwal@beyondirr.tech
-    - [Dhruv-Sachdev1313](https://github.com/Dhruv-Sachdev1313) - dhruv.sachdev@beyondirr.tech
 - Submit the link to your private GitHub repository via the specified submission form shared on your respective emails.
 - **DEADLINE: 11:59 PM on December 15, 2025, positively.**
 
